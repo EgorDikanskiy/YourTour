@@ -1,0 +1,82 @@
+:root {
+  --bs-heading-color: black;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #469597;
+  --bs-btn-border-color: #5BA199;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #5BA199;
+  --bs-btn-hover-border-color: #469597;
+  --bs-btn-focus-shadow-rgb: 49,132,253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0a58ca;
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #0d6efd;
+  --bs-btn-disabled-border-color: #0d6efd;
+}
+
+.dark {
+   background-color: #DDBEAA;
+}
+
+.footer-link {
+    color: black;
+}
+
+.main-img-catalog {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+}
+
+.carousel-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.tag {
+  padding: 0.3rem 0.85rem;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+
+  text-transform: uppercase;
+  border-radius: 2rem;
+  background-color: #6286D5;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .carousel-image {
+    height: 450px;
+  }
+
+  .gallery-img {
+    height: 120px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel-image {
+    height: 750px;
+  }
+
+  .gallery-img {
+    height: 200px;
+  }
+}

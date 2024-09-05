@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% block title %}<title>{{ route_info.name }}</title>{% endblock %}
+<div class="container">
+  <div>
+    <h1 class="h1 mb-4">{{ route_info.name }}</h1>
+    <div class="mb-3">
+      <p>{{ route_info.text|safe }}</p>
+    </div>
+  </div>
+  <div class="row">
+    {% for spot in route_info.spots.all %}
+    <div class="col-md-4 mb-4">
+      <div class="card" style="width: 18vrem;">
+        <img src="{{ spot.spot_mainimage.image.url }}" class="main-img-catalog" alt="..."/>
+        <div class="card-body">
+          <h5 class="card-title">{{ spot.name }}</h5>
+          <p class="card-text">{{ spot.text|truncatewords_html:5|safe }}</p>
+          <a href="{% url 'catalog:spot_detail' spot.id %}" class="btn btn-primary">Подробнее</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p>Ещё нет мест</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

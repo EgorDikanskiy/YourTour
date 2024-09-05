@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% block title %}<title>Маршруты</title>{% endblock %}
+<div class="container">
+  <div class="row">
+    {% for route in rotes %}
+    {% ifchanged route.region %}
+    <h2 class="col-md-12 text-center mb-3">{{ route.region }}</h2>
+    {% endifchanged %}
+    <div class="col-md-4 mb-4">
+      <div class="card" style="width: 18vrem;">
+        <div class="card-body">
+          <img src="{{ route.route_mainimage.image.url }}" class="main-img-catalog" alt="..."/>
+          <h5 class="card-title">{{ route.name }}</h5>
+          <p class="card-text">{{ route.text|truncatewords_html:5|safe }}</p>
+          <a href="{% url 'routes:route_detail' route.id %}" class="btn btn-primary">Подробнее</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p>Ещё нет маршрутов</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
